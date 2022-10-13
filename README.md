@@ -16,3 +16,4 @@ Hostname 10.172.*
 bastion_IP = 34.163.245.209
 someinternalhost_IP = 10.172.0.2
 ```
+
