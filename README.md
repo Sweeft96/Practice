@@ -16,9 +16,32 @@ Hostname 10.172.*
 bastion_IP = 34.163.245.209
 someinternalhost_IP = 10.172.0.2
 ```
-## HW 6
+## HW 6 (GCP)
 ```
 testapp_IP = 35.204.254.156
 testapp_port = 9292
 ```
-
+Дополнительное задание: создание firewall rule через gcloud:
+```
+gcloud compute firewall-rules create default-puma-server --action=allow --rules tcp:9292 --direction=ingress --target-tags=puma-server
+```
+## HW 7 (Packer)
+Установка Packer:
+``` 
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install packer
+```
+Настройка Application Default Credentials (ADC), чтобы Packer мог обращаться к GCP через API:
+```
+gcloud auth application-default login
+```
+В файле ubuntu16.json были описаны инструкции для packer builder для подготовки образа Ubuntu с предустановленными Ruby и MongoDB.
+Проверка .json файла на ошибки:
+```
+packer validate ./ubuntu16.json
+```
+Запуск создания образа:
+```
+packer build ubuntu16.json
+```
