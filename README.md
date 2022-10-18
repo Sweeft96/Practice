@@ -45,3 +45,19 @@ packer validate ./ubuntu16.json
 ```
 packer build ubuntu16.json
 ```
+## HW 8 (IaC - terraform-1)
+# Самостоятельные задания
+Определите input переменную для приватного ключа, использующегося в определении подключения для провижинеров (connection);
+```
+variable "public_key_path" {
+  description = "Path to the public key used for ssh access"
+}
+```
+Определите input переменную для задания зоны в ресурсе "googlecomputeinstance" "app". У нее должно быть значение по умолчанию.
+
+```
+variable "zone" {
+  description = "Zone"
+  default = "europe-west1-b"
+}
+```
