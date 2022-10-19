@@ -1,0 +1,8 @@
+files
+main.tf
+nohup.out
+outputs.tf
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfvars.example
+variables.tf

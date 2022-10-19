@@ -1,11 +1,11 @@
 terraform {
   # Версия terraform
-  required_version = "0.11.11"
+  required_version = "0.12.8"
 }
 
 provider "google" {
   # Версия провайдера
-  version = "2.0.0"
+  version = "3.17.0"
 
   # ID проекта
   project = "infra-365211"
@@ -34,7 +34,7 @@ resource "google_compute_instance" "app" {
     access_config {}
   }
 
-  metadata {
+  metadata = {
     # путь до публичного ключа
     ssh-keys = "sweeft:${file("~/.ssh/id_rsa.pub")}"
   }
@@ -43,7 +43,7 @@ resource "google_compute_instance" "app" {
     type  = "ssh"
     user  = "sweeft"
     agent = false
-
+    host = "network_interface.0.access_config.0.nat_ip"
     # путь до приватного ключа
     private_key = "${file(var.private_key_path)}"
   }
