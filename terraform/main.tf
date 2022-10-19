@@ -36,7 +36,7 @@ resource "google_compute_instance" "app" {
 
   metadata = {
     # путь до публичного ключа
-    ssh-keys = "sweeft:${file("~/.ssh/id_rsa.pub")}"
+    ssh-keys = "sweeft:${file("~/.ssh/appuser.pub")}"
   }
 
   connection {
