@@ -45,6 +45,7 @@ packer validate ./ubuntu16.json
 ```
 packer build ubuntu16.json
 ```
+
 ## HW 8 (IaC - terraform-1)
 # Самостоятельные задания
 Определите input переменную для приватного ключа, использующегося в определении подключения для провижинеров (connection);
