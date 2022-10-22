@@ -62,3 +62,42 @@ variable "zone" {
   default = "europe-west1-b"
 }
 ```
+
+## HW 9 (terraform-2)
+Создаём копию уже определённого в GCP правила, разрешающего подключение по ssh:
+```
+resource "google_compute_firewall" "firewall_ssh" {
+  name        = "default-allow-ssh"
+  description = "Allow SSH from anywhere"
+  network     = "default"
+  priority    = 65534
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+}
+```
+# Разбиение конфигурации по файлам / на модули
+```
+$ tree modules/app/
+modules/app/
+├── files
+│   ├── deploy.sh
+│   ├── puma.service
+│   └── set_env.sh
+├── main.tf
+├── outputs.tf
+└── variables.tf
+```
+# Структура модуля
+```
+module "db" {
+  source          = "../modules/db"
+  public_key_path = "${var.public_key_path}"
+  zone            = "${var.zone}"
+  db_disk_image   = "${var.db_disk_image}"
+}
+```
