@@ -1,7 +1,7 @@
 provider "google" {
 version = "3.17.0"
-project = "${var.project}"
-region = "${var.region}"
+project = "infra-365211"
+region = "europe-west-1"
 }
 module "storage-bucket" {
 source = "SweetOps/storage-bucket/google"
