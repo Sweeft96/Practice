@@ -80,7 +80,9 @@ resource "google_compute_firewall" "firewall_ssh" {
   source_ranges = ["0.0.0.0/0"]
 }
 ```
-# Разбиение конфигурации по файлам / на модули
+
+### Разбиение конфигурации по файлам / на модули
+
 ```
 $ tree modules/app/
 modules/app/
@@ -92,7 +94,9 @@ modules/app/
 ├── outputs.tf
 └── variables.tf
 ```
-# Структура модуля
+
+### Структура модуля
+
 ```
 module "db" {
   source          = "../modules/db"

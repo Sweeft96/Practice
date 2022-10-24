@@ -1,4 +1,3 @@
-
 provider "google" {
   version = "3.17"
   project = "infra-365211"
@@ -16,3 +15,4 @@ module "storage-bucket" {
 output storage-bucket_url {
   value = module.storage-bucket.url
 }
+
