@@ -1,11 +1,11 @@
 variable public_key_path {
-description = "Path to the public key used to connect to instance"
-default = "~/.ssh/appuser.pub"
+  description = "Path to the public key used to connect to instance"
+  default     = "~/.ssh/appuser.pub"
 }
 variable zone {
-description = "Zone"
+  description = "Zone"
 }
 variable app_disk_image {
-description = "Disk image for reddit app"
-default = "reddit-app-base"
+  description = "Disk image for reddit app"
+  default     = "reddit-app-base"
 }

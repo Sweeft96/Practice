@@ -22,7 +22,7 @@ variable private_key_path {
 }
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "reddit-app-base"
+  default = "reddit-app"
 }
 variable db_disk_image {
   description = "Disk image for reddit db"
