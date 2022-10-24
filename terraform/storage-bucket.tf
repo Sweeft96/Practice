@@ -1,18 +1,15 @@
 provider "google" {
-  version = "3.17"
-  project = "infra-365211"
-  region  = "europe-west1"
+  version = "3.17.0"
+  project = var.project
+  region  = var.region
 }
 
 module "storage-bucket" {
   source  = "SweetOps/storage-bucket/google"
   version = "0.3.1"
-
-  # Имя поменяйте на другое
-  name = "infra-365211"
+  name =  "terraform-prod-state-bucket"
 }
 
 output storage-bucket_url {
   value = module.storage-bucket.url
 }
-
