@@ -6,3 +6,11 @@ variable "zone" {
   description = "Zone"
   default     = "europe-west1-b"
 }
+variable "project" {
+  description = "Project"
+  default     = "infra-365211"
+}
+variable "region" {
+  description = "Region"
+  default     = "euro-west1"
+}
