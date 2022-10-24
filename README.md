@@ -81,6 +81,8 @@ resource "google_compute_firewall" "firewall_ssh" {
 }
 ```
 
+
+
 ### Разбиение конфигурации по файлам / на модули
 
 ```
