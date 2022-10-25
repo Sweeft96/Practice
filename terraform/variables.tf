@@ -1,5 +1,5 @@
-
 variable project {
+variable project{
   description = "Project ID"
 }
 variable region {
@@ -27,5 +27,10 @@ variable app_disk_image {
 variable db_disk_image {
   description = "Disk image for reddit db"
   default     = "reddit-db"
+  default = "reddit-app"
+}
+variable db_disk_image {
+  description = "Disk image for reddit db"
+  default = "reddit-db"
 }
 
