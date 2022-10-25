@@ -1,8 +1,8 @@
 {
     "variables": {
-        "project_id": "null",
-        "source_image_family": "null",
-        "machine_type": "f1-micro",
+        "project_id": "infra-365211",
+	"source_image_family": "ubuntu-1804-lts",
+	"machine_type": "f1-micro",
         "image_description": "no description",
         "disk_size": "10",
         "network": "default",
@@ -12,8 +12,8 @@
         {
             "type": "googlecompute",
             "project_id": "{{ user `project_id` }}",
-            "image_name": "reddit-app-base-{{timestamp}}",
-            "image_family": "reddit-app-base",
+            "image_name": "reddit-app-{{timestamp}}",
+            "image_family": "reddit-app",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
