@@ -107,4 +107,13 @@ module "db" {
   db_disk_image   = "${var.db_disk_image}"
 }
 ```
-
+## HW 10(ansible-1)
+Примеры протестированных команд:
+```
+$ ansible app -m command -a 'ruby -v'
+$ ansible app -m command -a 'ruby -v; bundler -v'
+$ ansible db -m command -a 'systemctl status mongod'
+$ ansible db -m systemd -a name=mongod
+$ ansible db -m service -a name=mongod
+$ ansible app -m git -a 'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
+```
