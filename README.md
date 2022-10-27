@@ -117,3 +117,13 @@ $ ansible db -m systemd -a name=mongod
 $ ansible db -m service -a name=mongod
 $ ansible app -m git -a 'repo=https://github.com/express42/reddit.git dest=/home/appuser/reddit'
 ```
+## HW 11(ansible-2)
+В данной работе мы опробовали:
+
+применение jinja2 templates;
+пробный прогон через опцию --check;
+ограничение группы хостов, к которым применяется плейбук, через --limit и --tags ;
+разбиение одного плейбука на несколько с последующим их объединением в один плейбук через import;
+механизм notify /handlers;
+установка софта и деплой приложения через Ansible (на смену bash-скриптам), в т.ч. в Packer.
+
