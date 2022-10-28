@@ -3,7 +3,7 @@
   hosts: all # <-- Для каких хостов будут выполняться описанные ниже таски
   vars:
     mongo_bind_ip: 0.0.0.0
-    db_host: 10.132.0.48
+    db_host: 10.132.15.195
   tasks: # <-- Блок тасков (заданий), которые будут выполняться для данных хостов
   - name: Change mongo config file
     become: true # <-- Выполнить задание от root
@@ -48,3 +48,4 @@
   - name: reload puma
     become: true
     systemd: name=puma state=restarted
+
