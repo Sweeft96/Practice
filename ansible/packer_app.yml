@@ -6,7 +6,8 @@
     - name: Install ruby and bundler
       apt:
         pkg:
-          - ruby-bundler
-          - build-essential
+         - ruby-full
+         - ruby-bundler
+         - build-essential
         update_cache: yes
 
