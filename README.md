@@ -127,3 +127,14 @@ $ ansible app -m git -a 'repo=https://github.com/express42/reddit.git dest=/home
 механизм notify /handlers;
 установка софта и деплой приложения через Ansible (на смену bash-скриптам), в т.ч. в Packer.
 
+## HW 12 (ansible-3: Работа с ролями и окружениями)
+
+В данной работе мы сделали:
+разбили ранее созданные плейбуки на роли (app, db);
+разделили окружения на prod и env;
+установили комьюнити-роль nginx;
+опробовали применения Ansible Vault;
+добавили поддержку окружения в dynamic inventory;
+задали дополнительные тесты в TravisCI.
+
+
